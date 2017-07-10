@@ -31,7 +31,7 @@ $('#controls').click(function(){
 })
 
 $('.boxes').click(function(){
-	return userArray += this.value
+	return userArray += this.id
 
 })
 
