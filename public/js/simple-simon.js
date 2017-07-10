@@ -1,3 +1,5 @@
+"use strict";
+
 //1 Make button funtion
 //2 display a pattern
 //3 check if user pattern matches display
@@ -10,32 +12,26 @@ var displayArray = [];
 var userArray = [];
 
 $('#controls').click(function(){
-	var random = Math.floor((Math.random() * 4) + 1);
-	var brighten = '';
-	switch (random) {
-		case 1:
-			brighten = 'blue';
-			break;
-		case 2:
-			brighten = 'red';
-			break;
-		case 3:
-			brighten = 'green';
-			break;
-		case 4:
-			brighten = 'yellow';
-			break;
-	}
-	$('#box' + random).css('background', brighten);
-
+	lightUpSquare();
 })
+
 
 $('.boxes').click(function(){
-	return userArray += this.id
+	return userArray.push(this.id);
 
 })
 
+function lightUpSquare(){
+	var random = Math.floor((Math.random() * 4) + 1);
 
+	//Using jQuery to brighten and darken colors via opacity
+	$('#box' + random).animate({
+		opacity: 1
+	}, 500).animate({
+		opacity: .4
+	}, 500)
+
+}
 
 
 
