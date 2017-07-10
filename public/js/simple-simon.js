@@ -9,7 +9,7 @@
 //3b if no, start over
 
 
-var displayArray = ["box1" ,"box2", "box3"];
+var gameArray = ["box1"];
 var userArray = [];
 
 $('#controls').click(function(){
@@ -19,34 +19,42 @@ $('#controls').click(function(){
 
 
 $('.boxes').click(function(){
-	if (displayArray.length == userArray.length){
-
-	}
+	userArray.push(this.id)
+	compareArrays();
 })
 function lightUpSequence(){
-	setInterval(function(){ 
-			$("#box1").css("background-color" ,"green"); 
-		}, 3000);
-	
 
-	// setInterval(function(){ 
-	// 		$("#box2").css("background-color" ,"green"); 
-	// 	}, 4000);
-	
+	setInterval(function(){
 
-	// setInterval(function(){ 
-	// 		$("#box3").css("background-color" ,"blue"); 
-	// 	}, 5000);
-	
+		$("#box1").css("background-color" ,"green"); 
 
-	// for(var i = 0; i < displayArray.length; i++){
-	// 	setInterval(function(){ 
-	// 		$("#box" + i).css("background-color" ,"green"); 
-	// 	}, 1000);
-
-	// }
+	}, 1000);
 	
 }
+
+//Compares Arrays via turning to string
+function compareArrays(){
+	if (gameArray.length == userArray.length){
+		if (gameArray.join('') == userArray.join('')) {
+			console.log("you win");
+			userArray = [];
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function lightUpSquare() {
 
@@ -59,7 +67,7 @@ function lightUpSquare() {
 		}, 400).animate({
 			opacity: .4
 		}, 400);
-		displayArray.push("box1");
+		gameArray.push("box1");
 
 	}, 750)
 }
