@@ -1,0 +1,51 @@
+
+#title {
+	text-align: center;
+	font-family: helvetica;
+}
+
+.boxes {
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	border-radius: 15px;
+}
+
+#box1 {
+	background: rgba(0, 0 , 165, .5);
+}
+
+#box2 {
+	background: rgba(165, 0, 0, .5);
+}
+
+
+#box3 {
+	background: rgba(0, 165, 0, .5);
+}
+
+#box4{
+	background: rgba(165, 165, 0, .5);
+}
+
+#controls {
+	height: 30px;
+	margin: 86px;
+	cursor: pointer;
+}
+
+section {
+	display: flex;
+}
+
+#top-row{
+	justify-content: center;
+}
+
+#middle-row {
+	justify-content: center;
+}
+
+#bottom-row {
+	justify-content: center;
+}
