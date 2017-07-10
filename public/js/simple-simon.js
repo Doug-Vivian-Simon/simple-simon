@@ -26,7 +26,7 @@ $('.boxes').click(function(){
 	compareArrays();
 })
 
-
+//Lights up the a random square
 function lightUpSequence(){
 var round = 0;
 	var interval = setInterval(function(){
