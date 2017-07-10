@@ -8,27 +8,37 @@
 //	2. add one more to pattern
 //3b if no, start over
 
+//Computer's Array
+var gameArray = [];
 
-var gameArray = ["box1"];
+//User's Array
 var userArray = [];
 
+//User clicks the start button
 $('#controls').click(function(){
 	userArray = [];
 	lightUpSequence();
 })
 
-
+//User clicks the box
 $('.boxes').click(function(){
 	userArray.push(this.id)
 	compareArrays();
 })
+
+
 function lightUpSequence(){
+var round = 0;
+	var interval = setInterval(function(){
+		round++;
+		var random = Math.floor((Math.random() * 4) + 1);
 
-	setInterval(function(){
-
-		$("#box1").css("background-color" ,"green"); 
-
-	}, 1000);
+		gameArray.push('box' + random);
+		$("#box" + random).css("background-color" ,"black"); 
+		if (round == gameArray.length){
+			clearInterval(interval);
+		}
+	 }, 1000);
 	
 }
 
@@ -37,6 +47,9 @@ function compareArrays(){
 	if (gameArray.length == userArray.length){
 		if (gameArray.join('') == userArray.join('')) {
 			console.log("you win");
+			userArray = [];
+		} else {
+			console.log('You lose');
 			userArray = [];
 		}
 	}
@@ -56,21 +69,21 @@ function compareArrays(){
 
 
 
-function lightUpSquare() {
+// function lightUpSquare() {
 
-	setTimeout(function(){
-		var random = Math.floor((Math.random() * 4) + 1);
-		// console.log(random)
-		//Using jQuery to brighten and darken colors via opacity
-		$('#box1').animate({
-			opacity: 1
-		}, 400).animate({
-			opacity: .4
-		}, 400);
-		gameArray.push("box1");
+// 	setTimeout(function(){
+		
+// 		// console.log(random)
+// 		//Using jQuery to brighten and darken colors via opacity
+// 		$('#box1').animate({
+// 			opacity: 1
+// 		}, 400).animate({
+// 			opacity: .4
+// 		}, 400);
+// 		gameArray.push("box1");
 
-	}, 750)
-}
+// 	}, 750)
+// }
 
 
 
