@@ -27,14 +27,15 @@ $('.boxes').click(function(){
 })
 
 //Lights up the a random square
-function lightUpSequence(){
 var round = 0;
+
+function lightUpSequence(){
 	var interval = setInterval(function(){
 		round++;
 		var random = Math.floor((Math.random() * 4) + 1);
 
 		gameArray.push('box' + random);
-		$("#box" + random).css("background-color" ,"black"); 
+		$("#box" + random).css("opacity" , 1); 
 		if (round == gameArray.length){
 			clearInterval(interval);
 		}
@@ -48,6 +49,7 @@ function compareArrays(){
 		if (gameArray.join('') == userArray.join('')) {
 			console.log("you win");
 			userArray = [];
+			lightUpSequence();
 		} else {
 			console.log('You lose');
 			userArray = [];
