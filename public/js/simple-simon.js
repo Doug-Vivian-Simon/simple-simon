@@ -12,25 +12,37 @@ var displayArray = [];
 var userArray = [];
 
 $('#controls').click(function(){
+	userArray = [];
 	lightUpSquare();
 })
 
 
 $('.boxes').click(function(){
-	return userArray.push(this.id);
+	if (displayArray.length == userArray.length){
 
+	}
 })
+function lightUpSequence(){
+var counter = 0;
 
-function lightUpSquare(){
-	var random = Math.floor((Math.random() * 4) + 1);
+		//set interval?
 
-	//Using jQuery to brighten and darken colors via opacity
-	$('#box' + random).animate({
-		opacity: 1
-	}, 500).animate({
-		opacity: .4
-	}, 500)
+}
 
+function lightUpSquare() {
+
+	setTimeout(function(){
+		var random = Math.floor((Math.random() * 4) + 1);
+		// console.log(random)
+		//Using jQuery to brighten and darken colors via opacity
+		$('#box1').animate({
+			opacity: 1
+		}, 400).animate({
+			opacity: .4
+		}, 400);
+		displayArray.push("box1");
+
+	}, 750)
 }
 
 
@@ -38,3 +50,29 @@ function lightUpSquare(){
 
 
 
+		
+	// if (displayArray != []){
+	// 	displayArray.forEach(function(element){
+
+	// 		console.log("display array length: " + displayArray.length);
+	// 		console.log("counter:" + counter);
+
+	// 		// console.log(element);
+	// 		$('#' + element).animate({
+	// 			opacity: 1
+	// 		}, 400).animate({
+	// 			opacity: .4
+	// 		}, {
+	// 			duration: 400,
+	// 			complete: function(){
+	// 				counter ++;
+	// 				console.log(counter)
+	// 			}
+	// 		})
+	// 	})
+	// 	if (counter == (displayArray.length - 1)){
+	// 		lightUpSquare();
+	// 	}
+	// } else if (displayArray == []){
+	// 	lightUpSquare();
+	// }
