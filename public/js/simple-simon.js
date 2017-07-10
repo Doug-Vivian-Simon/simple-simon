@@ -8,12 +8,13 @@
 //	2. add one more to pattern
 //3b if no, start over
 
-var displayArray = [];
+
+var displayArray = ["box1" ,"box2", "box3"];
 var userArray = [];
 
 $('#controls').click(function(){
 	userArray = [];
-	lightUpSquare();
+	lightUpSequence();
 })
 
 
@@ -23,10 +24,28 @@ $('.boxes').click(function(){
 	}
 })
 function lightUpSequence(){
-var counter = 0;
+	setInterval(function(){ 
+			$("#box1").css("background-color" ,"green"); 
+		}, 3000);
+	
 
-		//set interval?
+	// setInterval(function(){ 
+	// 		$("#box2").css("background-color" ,"green"); 
+	// 	}, 4000);
+	
 
+	// setInterval(function(){ 
+	// 		$("#box3").css("background-color" ,"blue"); 
+	// 	}, 5000);
+	
+
+	// for(var i = 0; i < displayArray.length; i++){
+	// 	setInterval(function(){ 
+	// 		$("#box" + i).css("background-color" ,"green"); 
+	// 	}, 1000);
+
+	// }
+	
 }
 
 function lightUpSquare() {
