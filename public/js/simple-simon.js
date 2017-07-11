@@ -13,11 +13,12 @@ var gameArray = [];
 
 //User's Array
 var userArray = [];
+var round = 0;
 
 //User clicks the start button
 $('#controls').click(function(){
 	userArray = [];
-	lightUpSequence();
+	runSequence();
 })
 
 //User clicks the box
@@ -26,21 +27,69 @@ $('.boxes').click(function(){
 	compareArrays();
 })
 
-//Lights up the a random square
-var round = 0;
+function runSequence(){
+	if (gameArray.length > 0) {
+		lightUpArray();
+		window.setTimeout(function(){
+			lightUpNew();
+		}, (round * 1000))
+	} else {
+		lightUpNew();
+	}
+}
 
-function lightUpSequence(){
+
+
+//Lights up the stored gameArray
+function lightUpArray(){
+	var i = 0;
+	var displayInterval = setInterval(function(){
+		console.log("interval " + i);
+		$("#" + gameArray[i]).removeClass("boxes-opacity");
+
+		window.setTimeout(function(){
+			$('#' + gameArray[i]).addClass("boxes-opacity");
+			console.log("Timeout " + i);
+		}, 500)
+
+		window.setTimeout(function(){
+			i++;
+		}, 550)
+		if (i == gameArray.length){
+			clearInterval(displayInterval);
+		}
+	}, 1000)
+}
+
+
+//Lights up the a random square
+
+function lightUpNew(){
+
 	var interval = setInterval(function(){
-		round++;
+		addRound();
+		
 		var random = Math.floor((Math.random() * 4) + 1);
 
 		gameArray.push('box' + random);
-		$("#box" + random).css("opacity" , 1); 
+
+		$("#box" + random).removeClass("boxes-opacity");
+
+		window.setTimeout(function(){
+			$("#box" + random).addClass("boxes-opacity");
+		}, 500)
+
+
 		if (round == gameArray.length){
 			clearInterval(interval);
 		}
 	 }, 1000);
 	
+}
+
+function addRound(){
+	round++;
+	$('#round').html('<h2>Round: ' + round + '</h2>');
 }
 
 //Compares Arrays via turning to string
@@ -49,10 +98,12 @@ function compareArrays(){
 		if (gameArray.join('') == userArray.join('')) {
 			console.log("you win");
 			userArray = [];
-			lightUpSequence();
+			runSequence();
 		} else {
 			console.log('You lose');
 			userArray = [];
+			gameArray = [];
+			round = 0;
 		}
 	}
 }

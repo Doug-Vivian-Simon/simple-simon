@@ -1,16 +1,19 @@
 
-#title {
+#title, #round {
 	text-align: center;
 	font-family: helvetica;
 }
+
 
 .boxes {
 	width: 200px;
 	height: 200px;
 	border: 1px solid black;
 	border-radius: 15px;
-	opacity: .4;
 	cursor: pointer;
+}
+.boxes-opacity {
+	opacity: .4;
 }
 
 #box1 {
