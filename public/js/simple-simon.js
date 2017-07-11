@@ -123,6 +123,8 @@ function compareArrays(){
 
 
 
+
+
 // function lightUpSquare() {
 
 // 	setTimeout(function(){
