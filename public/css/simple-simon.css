@@ -7,11 +7,33 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Ubuntu', sans-serif;*/
+html {
+	background: #475577;
+}
+.github {
+	width: 50px;
+	box-shadow: 2px 2px 60px;
+	border-radius: 50px;
+	float: right;
+	position: relative;
+	top: -50px;
+	right: 50px;
+}
 
 
-#title, #round {
-	
+#title{
+	color: #EFEFEF;
+	font-size: 2.5em;
+	text-shadow:3px 3px 10px black;
 	font-family: 'Montserrat', sans-serif;
+}
+
+#round {
+	color: #EFEFEF;
+	font-size: 1em;
+	text-shadow:3px 3px 10px black;
+	font-family: 'Montserrat', sans-serif;
+	display: inline-block;
 }
 .background{
 	background-color: darkgray;
@@ -23,6 +45,7 @@ font-family: 'Ubuntu', sans-serif;*/
 	top: auto;
 	right: auto;
 	border-radius: 75px;
+	box-shadow: 2px 2px 50px 3px #080808
 	
 
 }
@@ -47,14 +70,14 @@ font-family: 'Ubuntu', sans-serif;*/
 	background-color: blue;
 	margin-bottom: -60px;
 	border-radius: 50px 0 0 0;
-	box-shadow: 2px 2px 50px 10px #5f6c7a
+	box-shadow: 2px 2px 15px 5px #5f6c7a
 }
 
 #box2 {
 	background-color: red;
 	margin-left: 40px;
 	border-radius: 0 50px 0 0;
-	box-shadow: 2px 2px 50px 10px #5f6c7a
+	box-shadow: 2px 2px 15px 5px #5f6c7a
 }
 
 
@@ -62,7 +85,7 @@ font-family: 'Ubuntu', sans-serif;*/
 	background-color: green;
 	margin-top: -60px;
 	border-radius: 0 0 50px 0;
-	box-shadow: 2px 2px 50px 10px #5f6c7a
+	box-shadow: 2px 2px 15px 5px #5f6c7a
 
 }
 
@@ -70,18 +93,20 @@ font-family: 'Ubuntu', sans-serif;*/
 	background-color: yellow;
 	margin-right: 40px;
 	border-radius: 0 0 0 50px;
-	box-shadow: 2px 2px 50px 10px #5f6c7a
+	box-shadow: 2px 2px 15px 5px #5f6c7a
 }
 
 #container{
-
+margin-top: 75px;
 	justify-content: center;
+
 }
 .second-container {
 	transform: rotate(-45deg);
 	margin-right: 50px;
 	margin-top: 50px;
 	margin: 15px 20px 15px 15px;
+
 }
 
 .center {
@@ -126,6 +151,12 @@ section {
 	justify-content: center;
 	/*transform: rotate(0deg);*/
 }
+
+#gameover {
+	position: relative;
+	top: -50px;
+}
+
 
 #lcd {
 	font-family: 'digital-7';

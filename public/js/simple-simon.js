@@ -17,7 +17,7 @@ var round = 0;
 
 //User clicks the start button
 $('#controls').click(function(){
-
+	$('#round>h2').text('');
 	$('#lcd').text('Round');
 	userArray = [];
 	runSequence();
