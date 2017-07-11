@@ -40,7 +40,7 @@ html {
 	width: 525px;
 	height: 525px;
 	transform: rotate(45deg);
-	position: fixed;
+	position: absolute;
 	z-index: -3;
 	top: auto;
 	right: auto;
@@ -114,7 +114,7 @@ margin-top: 75px;
 	width: 200px;
 	border: 1px solid #5f6c7a;
 	background-color: gray;
-	position: fixed;
+	position: absolute;
 	z-index: 20;
 	border-radius: 10px;
 
