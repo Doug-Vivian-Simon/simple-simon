@@ -6,19 +6,24 @@
 </head>
 <body>
 <h1 id="title">Simple Simon</h1>
-<div id="round"></div>
-	<section id="top-row">
-		<div class="boxes boxes-opacity" id="box1" value="1"></div>
-	</section>
-	<section id="middle-row">
-		<div class="boxes boxes-opacity" id="box4" value="4"></div>
-		<button id="controls">Click Here!</button>
-		<div class="boxes boxes-opacity" id="box2" value="2"></div>
-	</section>
-	<section id="bottom-row">
-		<div class="boxes boxes-opacity" id="box3" value="3"></div>
-	</section>
-
+<div id="round"><h2>Round:</h2></div>
+<section id="container">
+	<div class="background">
+		<div class="second-container">
+			<section id="top-row">
+				<div class="boxes boxes-opacity" id="box1" value="1"></div>
+			</section>
+			<section id="middle-row">
+				<div class="boxes boxes-opacity" id="box4" value="4"></div>
+				<div class="center"><button id="controls">Click Here!</button></div>
+				<div class="boxes boxes-opacity" id="box2" value="2"></div>
+			</section>
+			<section id="bottom-row">
+				<div class="boxes boxes-opacity" id="box3" value="3"></div>
+			</section>
+		</div>
+	</div>
+</section>		
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/js/simple-simon.js"></script>
 </body>

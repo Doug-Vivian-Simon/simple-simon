@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu');
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Ubuntu', sans-serif;*/
 
 #title, #round {
-	text-align: center;
-	font-family: helvetica;
+	
+	font-family: 'Montserrat', sans-serif;
+}
+.background{
+	background-color: darkgray;
+	width: 525px;
+	height: 525px;
+	transform: rotate(45deg);
+	position: fixed;
+	z-index: -3;
+	top: auto;
+	right: auto;
+	border-radius: 75px;
+	
+
 }
 
 
@@ -9,33 +25,75 @@
 	width: 200px;
 	height: 200px;
 	border: 1px solid black;
-	border-radius: 15px;
+	transform: rotate(45deg);
 	cursor: pointer;
 }
+
 .boxes-opacity {
 	opacity: .4;
+}
+.boxes-opacity:hover {
+	opacity: 1;
 }
 
 #box1 {
 	background-color: blue;
+	margin-bottom: -60px;
+	border-radius: 50px 0 0 0;
+	box-shadow: 2px 2px 50px 10px #5f6c7a
 }
 
 #box2 {
 	background-color: red;
+	margin-left: 40px;
+	border-radius: 0 50px 0 0;
+	box-shadow: 2px 2px 50px 10px #5f6c7a
 }
 
 
 #box3 {
 	background-color: green;
+	margin-top: -60px;
+	border-radius: 0 0 50px 0;
+	box-shadow: 2px 2px 50px 10px #5f6c7a
+
 }
 
 #box4{
 	background-color: yellow;
+	margin-right: 40px;
+	border-radius: 0 0 0 50px;
+	box-shadow: 2px 2px 50px 10px #5f6c7a
+}
+
+#container{
+
+	justify-content: center;
+}
+.second-container {
+	transform: rotate(-45deg);
+	margin-right: 50px;
+	margin-top: 50px;
+	margin: 15px 20px 15px 15px;
+}
+
+.center {
+	height: 200px;
+	width: 200px;
+	border: 1px solid #5f6c7a;
+	background-color: gray;
+	position: fixed;
+	z-index: 20;
+	border-radius: 10px;
+
+	
 }
 
 #controls {
-	height: 30px;
-	margin: 86px;
+	height: 60px;
+	width: 60px;
+	margin: 70px;
+
 	cursor: pointer;
 }
 
@@ -45,12 +103,15 @@ section {
 
 #top-row{
 	justify-content: center;
+	/*transform: rotate(0deg);*/
 }
 
 #middle-row {
 	justify-content: center;
+	/*transform: rotate(0deg);*/
 }
 
 #bottom-row {
 	justify-content: center;
+	/*transform: rotate(0deg);*/
 }

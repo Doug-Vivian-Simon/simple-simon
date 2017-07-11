@@ -103,6 +103,7 @@ function compareArrays(){
 			console.log('You lose');
 			userArray = [];
 			gameArray = [];
+			$("#round>h2").text("YOU LOST! You got to round " + round)
 			round = 0;
 		}
 	}
