@@ -1,6 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu');
+@font-face {
+	font-family: 'digital-7';
+	src: url('/fonts/digital-7.ttf');
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Ubuntu', sans-serif;*/
+
 
 #title, #round {
 	
@@ -92,10 +99,13 @@ font-family: 'Ubuntu', sans-serif;*/
 
 #controls {
 	height: 60px;
-	width: 60px;
-	margin: 70px;
-
+	width: 80px;
+	margin: 25px 60px 15px 60px;
+	border: 1px solid #5f6c7a;
+	border-radius: 25px;
 	cursor: pointer;
+	font-size: 1.25em;
+	font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -115,4 +125,15 @@ section {
 #bottom-row {
 	justify-content: center;
 	/*transform: rotate(0deg);*/
+}
+
+#lcd {
+	font-family: 'digital-7';
+	text-align: center;
+	font-size: 2em;
+	width: 90px;
+	height: 50px;
+	background-color: #96ab8b;
+	margin: 0 40px 0 40px;
+	padding: 20px 15px 15px 15px; 
 }

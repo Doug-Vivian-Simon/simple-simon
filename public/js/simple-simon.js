@@ -17,12 +17,15 @@ var round = 0;
 
 //User clicks the start button
 $('#controls').click(function(){
+
+	$('#lcd').text('Round');
 	userArray = [];
 	runSequence();
 })
 
 //User clicks the box
 $('.boxes').click(function(){
+
 	userArray.push(this.id)
 	compareArrays();
 })
@@ -89,7 +92,7 @@ function lightUpNew(){
 
 function addRound(){
 	round++;
-	$('#round').html('<h2>Round: ' + round + '</h2>');
+	$('#lcd').html('Round' + '<br>' + round);
 }
 
 //Compares Arrays via turning to string
@@ -101,6 +104,7 @@ function compareArrays(){
 			runSequence();
 		} else {
 			console.log('You lose');
+			gameOver();
 			userArray = [];
 			gameArray = [];
 			$("#round>h2").text("YOU LOST! You got to round " + round)
@@ -109,6 +113,17 @@ function compareArrays(){
 	}
 }
 
+function gameOver(){
+	$('.second-container').animate({
+		height: '+=6000px',
+		width: '+=6000px',
+		opacity: '-=6'
+	}, 2000).animate({
+		height: '-=6000px',
+		width: '-=6000px',
+		opacity: '+=6'
+	})
+}
 
 
 
