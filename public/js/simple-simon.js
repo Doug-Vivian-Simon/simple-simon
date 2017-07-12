@@ -16,37 +16,46 @@ var time = 1000;
 //User clicks the start button
 $('#controls').click(function(){
 	if (clicked == false){
+		gameArray = [];
+		userArray = [];
 		clicked = true;
 		$('#round>h2').text('');
-		$('#lcd').text('Round');
+		$('#lcd-test').text('Round');
 		userArray = [];
 		changeStartButton();
 		runSequence();
 	} else {
-		clicked = false;
 		resetGame();
 	}
 	
 })
 
-//User clicks the box
-$('.boxes').click(function(){
-	userArray.push(this.id)
-	compareArrays();
-})
+
+//Clears game & changes button back to start
+function resetGame(){
+	userArray = [];
+	gameArray = [];
+	round = 0;
+	$('#controls').text('Start');
+	clicked = false;
+	}
 
 //Changes start button to Restart
 function changeStartButton(){
 	$('#controls').text('Restart');
 }
 
-//Clears game & changes button back to start
-function resetGame(){
-	userArray = [];
-	gameArray = [];
-	round = 0; 
-	$('#controls').text('Start');
-}
+//User clicks the box
+$('.boxes').click(function(){
+	userArray.push(this.id)
+	compareArrays();
+})
+$('#easy').click(function(){
+	time = 1000
+})
+$('#harder').click(function(){
+	time = time/1.5;
+})
 
 
 //Runs the game
@@ -61,7 +70,7 @@ function runSequence(){
 	}
 }
 
-
+var display;
 
 //Lights up the stored gameArray
 function lightUpArray(){
@@ -81,11 +90,12 @@ function lightUpArray(){
 			clearInterval(displayInterval);
 		}
 	}, time)
+	display = displayInterval;
 }
 
 
 //Lights up the a random square
-
+var interval2;
 function lightUpNew(){
 
 	var interval = setInterval(function(){
@@ -106,12 +116,12 @@ function lightUpNew(){
 			clearInterval(interval);
 		}
 	 }, time);
-	
+	interval2 = interval;
 }
 
 function addRound(){
 	round++;
-	$('#lcd').html('Round' + '<br>' + round);
+	$('#lcd-text').html('Round' + '<br>' + round);
 }
 
 //Compares Arrays via turning to string

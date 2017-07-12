@@ -9,10 +9,11 @@
 html {
 	background: #475577;
 }
+
 /*GitHub link in the top right corner*/
 .github {
 	width: 50px;
-	box-shadow: 2px 2px 60px;
+	box-shadow: 2px 2px 60px black;
 	border-radius: 50px;
 	float: right;
 	position: relative;
@@ -25,6 +26,7 @@ html {
 	font-size: 2.5em;
 	text-shadow:3px 3px 10px black;
 	font-family: 'Montserrat', sans-serif;
+	margin-left: 40px;
 }
 /*Used to be for round, now for gameover message, trying to phase this one out*/
 #round {
@@ -58,6 +60,8 @@ html {
 /*Class to change to 'Light up' a box*/
 .boxes-opacity {
 	opacity: .4;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
 }
 /*Lights Box on user click*/
 .boxes:active {
@@ -114,14 +118,25 @@ html {
 }
 /*The Start Button*/
 #controls {
-	height: 60px;
+	height: 45px;
 	width: 80px;
 	margin: 25px 60px 15px 60px;
 	border: 1px solid #5f6c7a;
-	border-radius: 25px;
+	border-radius: 10px;
 	cursor: pointer;
 	font-size: 1.25em;
 	font-family: 'Montserrat', sans-serif;
+}
+/*GameMode Buttons*/
+#mode{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+}
+.mode-button {
+	width: 75px;
+	margin: -5px 10px 0 10px;
+	background-color: #F0F0F0
 }
 /*The section and 'rows' could and should be combined, but I leave them separate /Just in case/ */
 section {
@@ -150,6 +165,9 @@ section {
 	width: 90px;
 	height: 50px;
 	background-color: #96ab8b;
-	margin: 0 40px 0 40px;
-	padding: 20px 15px 15px 15px; 
+	margin: 5px 40px 0 40px;
+	padding: 15px; 
+}
+#lcd-text {
+	margin-top: -15px;
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/simple-simon.css">
 	<title>Simple Simon</title>
 </head>
@@ -25,7 +26,12 @@
 				<div class="boxes boxes-opacity" id="box4" value="4"></div>
 				<div class="center">
 					<button id="controls">Start</button>
-					<div id="lcd"></div>
+					<div id="mode">
+						<button id="harder" class="mode-button">Faster</button>
+					</div>
+					<div id="lcd">
+						<div id="lcd-text"></div>
+					</div>
 				</div>
 				<div class="boxes boxes-opacity" id="box2" value="2"></div>
 			</section>
