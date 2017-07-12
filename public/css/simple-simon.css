@@ -126,6 +126,13 @@ html {
 	cursor: pointer;
 	font-size: 1.25em;
 	font-family: 'Montserrat', sans-serif;
+	box-shadow: 2px 2px 20px 10px #707070;
+}
+#controls:active {
+	box-shadow: 2px 2px 20px 5px #707070 inset;
+}
+#controls:active, #controls:focus{
+	outline: none;
 }
 /*GameMode Buttons*/
 #mode{
@@ -136,8 +143,19 @@ html {
 .mode-button {
 	width: 75px;
 	margin: -5px 10px 0 10px;
-	background-color: #F0F0F0
+	background-color: #c0c0c0;
+		
+	border: 1px solid #a9a9a9;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
 }
+.mode-button:active{
+	box-shadow: 2px 2px 20px 5px #707070 inset;
+}
+.mode-button:active, .mode-button:focus{
+	outline: none;
+}
+
 /*The section and 'rows' could and should be combined, but I leave them separate /Just in case/ */
 section {
 	display: flex;

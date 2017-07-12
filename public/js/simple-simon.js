@@ -1,15 +1,4 @@
-
-	"use strict";
-
-var testObject = { 'HighScore': round};
-
-// Put the object into storage
-
-
-// Retrieve the object from storage
-
-
-
+"use strict";
 
 //Computer's Array
 var gameArray = [];
@@ -17,9 +6,8 @@ var gameArray = [];
 //User's Array
 var userArray = [];
 var round = 0;
-
+//sets status of start button
 var clicked = false;
-
 //set time to 1000
 var time = 1000;
 
@@ -31,7 +19,6 @@ $('#controls').click(function(){
 		clicked = true;
 		$('#round>h2').text('');
 		$('#lcd-test').text('Round');
-		userArray = [];
 		changeStartButton();
 		runSequence();
 	} else {
@@ -60,9 +47,8 @@ $('.boxes').click(function(){
 	userArray.push(this.id)
 	compareArrays();
 })
-$('#easy').click(function(){
-	time = 1000
-})
+
+//Makes the game faster
 $('#harder').click(function(){
 	time = time/1.5;
 })
@@ -79,9 +65,6 @@ function runSequence(){
 		lightUpNew();
 	}
 }
-
-var display;
-
 //Lights up the stored gameArray
 function lightUpArray(){
 	var i = 0;
@@ -100,13 +83,10 @@ function lightUpArray(){
 			clearInterval(displayInterval);
 		}
 	}, time)
-	display = displayInterval;
-
 }
 
 
 //Lights up the a random square
-var interval2;
 function lightUpNew(){
 
 	var interval = setInterval(function(){
@@ -127,22 +107,17 @@ function lightUpNew(){
 			clearInterval(interval);
 		}
 	 }, time);
-	interval2 = interval;
 }
-var retrievedObject;
+//adds round to counter
 function addRound(){
 	round++;
 	$('#lcd-text').html('Round' + '<br>' + round);
-	localStorage.setItem('testObject', JSON.stringify(testObject));
-	retrievedObject = localStorage.getItem('testObject');
-	return testObject.HighScore = (round + 1);
 }
 
 //Compares Arrays via turning to string
 function compareArrays(){
 	if (gameArray.length == userArray.length){
 		if (gameArray.join('') == userArray.join('')) {
-
 			userArray = [];
 			runSequence();
 		} else {
@@ -156,6 +131,7 @@ function compareArrays(){
 	}
 }
 
+//Game Over function, melts off screen
 function gameOver(){
 	$('.second-container').animate({
 		height: '+=6000px',
@@ -166,5 +142,4 @@ function gameOver(){
 		width: '-=6000px',
 		opacity: '+=6'
 	})
-	var retrievedObject = localStorage.getItem('testObject');
 }
