@@ -10,6 +10,9 @@ var round = 0;
 
 var clicked = false;
 
+//set time to 1000
+var time = 1000;
+
 //User clicks the start button
 $('#controls').click(function(){
 	if (clicked == false){
@@ -52,7 +55,7 @@ function runSequence(){
 		lightUpArray();
 		window.setTimeout(function(){
 			lightUpNew();
-		}, (round * 1000))
+		}, (round * time))
 	} else {
 		lightUpNew();
 	}
@@ -69,15 +72,15 @@ function lightUpArray(){
 		window.setTimeout(function(){
 			$('#' + gameArray[i]).addClass("boxes-opacity");
 
-		}, 500)
+		}, time/2)
 
 		window.setTimeout(function(){
 			i++;
-		}, 550)
+		}, time * 0.6)
 		if (i == gameArray.length){
 			clearInterval(displayInterval);
 		}
-	}, 1000)
+	}, time)
 }
 
 
@@ -96,13 +99,13 @@ function lightUpNew(){
 
 		window.setTimeout(function(){
 			$("#box" + random).addClass("boxes-opacity");
-		}, 500)
+		}, time/2)
 
 
 		if (round == gameArray.length){
 			clearInterval(interval);
 		}
-	 }, 1000);
+	 }, time);
 	
 }
 
