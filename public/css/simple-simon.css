@@ -1,15 +1,15 @@
+/*Font for LCD*/
 @font-face {
 	font-family: 'digital-7';
 	src: url('/fonts/digital-7.ttf');
 }
-
-
+/*Font for Title/Everything*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-/*font-family: 'Montserrat', sans-serif;
-font-family: 'Ubuntu', sans-serif;*/
+
 html {
 	background: #475577;
 }
+/*GitHub link in the top right corner*/
 .github {
 	width: 50px;
 	box-shadow: 2px 2px 60px;
@@ -19,15 +19,14 @@ html {
 	top: -50px;
 	right: 50px;
 }
-
-
+/*Main Title*/
 #title{
 	color: #EFEFEF;
 	font-size: 2.5em;
 	text-shadow:3px 3px 10px black;
 	font-family: 'Montserrat', sans-serif;
 }
-
+/*Used to be for round, now for gameover message, trying to phase this one out*/
 #round {
 	color: #EFEFEF;
 	font-size: 1em;
@@ -35,6 +34,7 @@ html {
 	font-family: 'Montserrat', sans-serif;
 	display: inline-block;
 }
+/*Big Gray Square*/
 .background{
 	background-color: darkgray;
 	width: 525px;
@@ -46,11 +46,8 @@ html {
 	right: auto;
 	border-radius: 75px;
 	box-shadow: 2px 2px 50px 3px #080808
-	
-
 }
-
-
+/*styling for all the boxes*/
 .boxes {
 	width: 200px;
 	height: 200px;
@@ -58,57 +55,54 @@ html {
 	transform: rotate(45deg);
 	cursor: pointer;
 }
-
+/*Class to change to 'Light up' a box*/
 .boxes-opacity {
 	opacity: .4;
 }
+/*Lights Box on user click*/
 .boxes:active {
 	opacity: 1;
 }
-
+/*blue box*/
 #box1 {
 	background-color: blue;
 	margin-bottom: -60px;
 	border-radius: 50px 0 0 0;
 	box-shadow: 2px 2px 15px 5px #5f6c7a
 }
-
+/*red box*/
 #box2 {
 	background-color: red;
 	margin-left: 40px;
 	border-radius: 0 50px 0 0;
 	box-shadow: 2px 2px 15px 5px #5f6c7a
 }
-
-
+/*green box*/
 #box3 {
 	background-color: green;
 	margin-top: -60px;
 	border-radius: 0 0 50px 0;
 	box-shadow: 2px 2px 15px 5px #5f6c7a
-
 }
-
+/*yellow box*/
 #box4{
 	background-color: yellow;
 	margin-right: 40px;
 	border-radius: 0 0 0 50px;
 	box-shadow: 2px 2px 15px 5px #5f6c7a
 }
-
+/*invisible container that centers evertyhing for the game*/
 #container{
-margin-top: 75px;
 	justify-content: center;
-
 }
+/*invisible container inside big gray square, rotates things -45 to counteract*/
 .second-container {
 	transform: rotate(-45deg);
 	margin-right: 50px;
 	margin-top: 50px;
 	margin: 15px 20px 15px 15px;
-
 }
-
+/*Small gray square with button and */
 .center {
 	height: 200px;
 	width: 200px;
@@ -116,12 +110,9 @@ margin-top: 75px;
 	background-color: gray;
 	position: absolute;
 	z-index: 20;
-	border-radius: 10px;
-
-
-	
+	border-radius: 10px;	
 }
-
+/*The Start Button*/
 #controls {
 	height: 60px;
 	width: 80px;
@@ -132,32 +123,26 @@ margin-top: 75px;
 	font-size: 1.25em;
 	font-family: 'Montserrat', sans-serif;
 }
-
+/*The section and 'rows' could and should be combined, but I leave them separate /Just in case/ */
 section {
 	display: flex;
 }
-
 #top-row{
 	justify-content: center;
-	/*transform: rotate(0deg);*/
 }
-
 #middle-row {
 	justify-content: center;
-	/*transform: rotate(0deg);*/
 }
-
 #bottom-row {
 	justify-content: center;
-	/*transform: rotate(0deg);*/
 }
 
+/*Failed attempt at moving the gameover message, will trya again later*/
 #gameover {
 	position: relative;
 	top: -50px;
 }
-
-
+/*The 'LCD' which displays the current round*/
 #lcd {
 	font-family: 'digital-7';
 	text-align: center;
