@@ -35,6 +35,8 @@ html {
 	text-shadow:3px 3px 10px black;
 	font-family: 'Montserrat', sans-serif;
 	display: inline-block;
+	position: fixed;
+	left: 40px;
 }
 /*Big Gray Square*/
 .background{
