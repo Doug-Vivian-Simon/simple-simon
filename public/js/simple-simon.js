@@ -8,20 +8,44 @@ var gameArray = [];
 var userArray = [];
 var round = 0;
 
+var clicked = false;
+
 //User clicks the start button
 $('#controls').click(function(){
-	$('#round>h2').text('');
-	$('#lcd').text('Round');
-	userArray = [];
-	runSequence();
+	if (clicked == false){
+		clicked = true;
+		$('#round>h2').text('');
+		$('#lcd').text('Round');
+		userArray = [];
+		changeStartButton();
+		runSequence();
+	} else {
+		clicked = false;
+		resetGame();
+	}
+	
 })
 
 //User clicks the box
 $('.boxes').click(function(){
-
 	userArray.push(this.id)
 	compareArrays();
 })
+
+//Changes start button to Restart
+function changeStartButton(){
+	$('#controls').text('Restart');
+}
+
+//Clears game & changes button back to start
+function resetGame(){
+	userArray = [];
+	gameArray = [];
+	round = 0; 
+	$('#controls').text('Start');
+}
+
+
 //Runs the game
 function runSequence(){
 	if (gameArray.length > 0) {
