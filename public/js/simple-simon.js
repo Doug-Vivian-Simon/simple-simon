@@ -1,5 +1,15 @@
-(function(){
+
 	"use strict";
+
+var testObject = { 'HighScore': round};
+
+// Put the object into storage
+
+
+// Retrieve the object from storage
+
+
+
 
 //Computer's Array
 var gameArray = [];
@@ -91,6 +101,7 @@ function lightUpArray(){
 		}
 	}, time)
 	display = displayInterval;
+
 }
 
 
@@ -118,10 +129,13 @@ function lightUpNew(){
 	 }, time);
 	interval2 = interval;
 }
-
+var retrievedObject;
 function addRound(){
 	round++;
 	$('#lcd-text').html('Round' + '<br>' + round);
+	localStorage.setItem('testObject', JSON.stringify(testObject));
+	retrievedObject = localStorage.getItem('testObject');
+	return testObject.HighScore = (round + 1);
 }
 
 //Compares Arrays via turning to string
@@ -152,5 +166,5 @@ function gameOver(){
 		width: '-=6000px',
 		opacity: '+=6'
 	})
+	var retrievedObject = localStorage.getItem('testObject');
 }
-})();
